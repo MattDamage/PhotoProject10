@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html>
+
+<title>
+	Final Project Test
+
+</title>
+
+<div  class="centered" style ="text-align:center">Project 10</div>
+<p>
+
+<head>
+
+		<style >
+			
+		.header {
+			display: block;
+			position: relative;
+			margin-left: 500;
+			margin-right: 500;
+			font-size: 5
+			width : 50%;
+			color: #FFFFFF;
+
+		}
+		
+
+		.centered {
+			display: block;
+			position: relative;
+			margin-left: 500;
+			margin-right: 500;
+			font-size: fanasty
+			width : 50%;
+			color: #FFFFFF;
+
+		}
+		.flash {
+			display: block;
+			position: relative;
+			margin-left: 500;
+			margin-right: 500;
+			font-size: fanasty
+			width : 50%;
+			color: #FFFFFF;
+
+		}
+		.alt {
+			display: block;
+			position: relative;
+			margin-left: 500;
+			margin-right: 500;
+			font-size: fanasty
+			width : 50%;
+			color: #FFDDFF;
+
+		}
+		.encoded 
+		{
+			display: block;
+			position: relative;
+			margin-left: 500;
+			margin-right: 500;
+			font-size: fanasty
+			width : 50%;
+			color: #FFFFFF;
+		}
+		img.resize { 
+		display: block;
+
+  		max-width:50%;
+  		margin-left: auto;
+    	margin-right: auto;
+  		max-height:50%;
+  		z-index: 1;
+		}
+		img.boarder { 
+		display: inline;
+
+  		max-width:60%;
+  		position: relative;
+  		margin-left: auto;
+    	margin-right: auto;
+  		max-height:60%;
+  		z-index: 2;
+		}
+		.mainRunner {
+  		border: 1px solid #000;
+  		position: relative;
+		}
+
+		</style>
+
+<h2 style = "text-align: center;"></h2>
+
+
+
+
+
+
+
+<!--<h1 font face = "Cursive" style = "text-align: center;">A quest without an end</h5>-->
+
+</head>
+
+
+<body style= "background-color: #080808;">
+
+
+
+<div  class="header" style ="text-align:center"><b> Natures Shadow </b>
+
+
+	<p style="page-break-before: always">
+<p>
+
+<div  class="centered" style ="text-align:center">Descent </div>
+<p>
+
+
+
+
+
+
+
+	<script>
+
+var TheMaster = ""; 
+var i = 0;
+var TheTimeOutVarible;
+
+function light(sw) 
+{
+  clearTimeout(TheTimeOutVarible);
+  TheMaster = "";
+  i = 0;
+  var pic;
+  var descricptions = new Array("Nature in full", "Nature Abused", "Nature Restrained" ,     "Nature Restriced",       "Nature Tamed",    "Nature Restrained",      "Nature Captured",     "Nature Removed",       "Nature Dead","Only Natures shadow is left" ); 
+
+  var images = new Array("Nature in Full.jpg",   "Nature_Abused.jpg","Nature_Restricted.jpg", "Nature_Restricted.jpg", "Nature_Tamed.jpg", "Nature_Restrained.jpg", "Nature_Captured.jpg", "Nature removed 1.jpg", "Nature Dead.jpg" ,"Nature_Shadow.jpg");
+
+ var ColorArray = new Array("#ed2637", "#c21220", "cf1121", "#a70b0b", "#800c0c", "#721010", "#691010", "#5a1010", "#4e0b0b", "#160404");
+
+ var encodedText = new Array("33 11 44 45 42 15 24 33 21 45 31 31 22 31 34 42 54","33 11 44 45 42 15 24 43 33 15 22 31 15 13 44 15 14","33 11 44 45 42 15 24 43 45 33 11 33 11 44 45 42 11 31 31 31 54 13 34 33 44 42 34 31 31 15 14", "33 11 44 45 15 42 24 43 13 11 35 44 45 42 15 14 21 34 42 43 45 35 15 42 21 24 13 11 31 45 43 15 43", "Hello Test", "Goodbye Expirment")
+
+  var currentDescription = "";
+  var currentCode = "";
+
+
+  var TextElement = document.getElementById('GalleryText'); 
+  var EncodedTextElement = document.getElementById('CodeText');
+
+
+  currentDescription = descricptions[sw]
+  pic = images[sw];
+  currentCode = encodedText[sw];
+
+  document.getElementById('Gallery').src = pic;
+  TextElement.innerHTML = currentDescription;
+  TheMaster = currentCode;
+  delayedWrite(currentCode);
+  
+  //EncodedTextElement.innerHTML = currentCode;
+	
+}
+
+function delayedWrite() 
+{	
+	if(i <= TheMaster.length) {
+	
+		var EncodedTextElement = document.getElementById('CodeText');
+		TheTimeOutVarible = setTimeout(function(){ delayedWrite(); }, 200);
+		EncodedTextElement.innerHTML = TheMaster.substring(0,i);
+		i++;
+	}
+	
+}
+
+function AddChar(charToAdd) {
+	TheMaster += charToAdd;
+
+}
+
+</script>
+
+
+
+
+<script>light(0);</script>
+<div class="mainRunner">
+
+<img id="Gallery" img src="White.png" alt="ScreenShot"  class="resize">
+ 
+</div>
+
+<p>
+  <div class="encoded" style ="text-align:center"  id="GalleryText">Place holder info display</div>
+  <div class="encoded" style ="text-align:left"  id="CodeText">-</div>
+	  
+
+  	<div onclick="light(0)" style="background-color:#ed2637;">α</div>
+  	<div onclick="light(1)" style="background-color:#c21220;">β</div>
+  	<div onclick="light(2)" style="background-color:#cf1121;">γ</div>
+  	<div onclick="light(3)" style="background-color:#a70b0b;">δ</div>
+  	<div onclick="light(4)" style="background-color:#800c0c;">ε</div>
+	<div onclick="light(5)" style="background-color:#721010;">ζ</div>
+	<div onclick="light(6)" style="background-color:#691010;">η</div>
+	<div onclick="light(7)" style="background-color:#5a1010;">θ</div>
+	<div onclick="light(8)" style="background-color:#4e0b0b;">ι</div>
+	<div onclick="light(9)" style="background-color:#160404;">κ</div>
+	
+
+</p>
+
+
+
+
+
+</body>
+
+</html>
+
